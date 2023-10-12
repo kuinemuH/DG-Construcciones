@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,35 +8,34 @@
     list-style: none;
 }
 
-body {
+body{
     font-family: 'Bebas Neue', cursive;
-    background-color: #09080d;
-} 
+    background-color: #09080D;
+}
 
-p {
+p{
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .header {
-    background-image: linear-gradient( 
-        rgba(0, 0, 0, 0.5), 
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)),
         url(../img/bg.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 70vh;
-        display: flex;
-        align-items: center;
-        animation: animate 3.2s linear forwards;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
 }
 
-.menu_container {
+.menu {
     position: absolute;
     top: 0;
     left: 0;
@@ -47,27 +46,23 @@ p {
 }
 
 .logo {
-    color: #fffdfc;
-    font-size: 35px;
-    margin-left: 30px;
-    animation: animate 0.5s linear forwards;
+    color: #FFFDFC;
+    font-size: 25px;
 }
 
-.menu_container .navbar ul li {
+.menu .navbar ul li {
     position: relative;
     float: left;
-    animation: animate 0.5s linear forwards;
 }
 
-.menu_container .navbar ul li a {
+.menu .navbar ul li a {
     font-size: 20px;
     padding: 20px;
-    color: #fffdfc;
+    color: #FFFDFC;
     display: block;
-    animation: animate 0.5s linear forwards;
 }
 
-.menu_container .navbar ul li a:hover {
+.menu .navbar ul li a:hover {
     color: #e68b5e;
 }
 
@@ -77,55 +72,203 @@ p {
 
 .menu_icono {
     width: 25px;
+}
+
+.menu label{
     cursor: pointer;
     display: none;
 }
 
 .header_txt {
     width: 50%;
-    margin-left: 30px;
 }
 
 .header_txt h1 {
-    font-size: 80px;
-    line-height: 95px;
-    color: #fffdfc;
+    font-size: 105px;
+    line-height: 110px;
+    color: #FFFDFC;
     margin-bottom: 35px;
 }
 
 .header_txt p {
     font-size: 16px;
-    color: #e0e0e0;
-    margin-bottom: 35px;
+    color: #FFFDFC;
+    margin-bottom: 75px;
 }
 
-.btn_1 {
+/* BOTON CON POP UP */
+.btn-popup {
     display: inline-block;
     padding: 11px 45px;
     background-color: #e68b5e;
-    color: #fffdfc;
+    color: #FFFDFC;
     border-radius: 25px;
     font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+    border: none;
+    cursor: pointer;
 }
 
-.btn_1:hover {
-    background-color: #fffdfc;
+.btn-popup:hover {
+    background-color: #FFFDFC;
     color: #e68b5e;
 }
 
-/* SECCION NOSOTROS */
+.btn2-popup {
+    display: inline-block;
+    padding: 11px 45px;
+    background-color: #e68b5e;
+    color: #FFFDFC;
+    border-radius: 25px;
+    font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+    border: none;
+    cursor: pointer;
+}
 
-.about_container {
-    padding: 50px 0;
-    margin: 0px 30px;
+.btn2-popup:hover {
+    background-color: #FFFDFC;
+    color: #e68b5e;
+}
+
+.btn3-popup {
+    display: inline-block;
+    padding: 11px 45px;
+    background-color: #e68b5e;
+    color: #FFFDFC;
+    border-radius: 25px;
+    font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+    border: none;
+    cursor: pointer;
+}
+
+.btn3-popup:hover {
+    background-color: #FFFDFC;
+    color: #e68b5e;
+}
+
+.btn4-popup {
+    display: inline-block;
+    padding: 11px 45px;
+    background-color: #e68b5e;
+    color: #FFFDFC;
+    border-radius: 25px;
+    font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+    border: none;
+    cursor: pointer;
+}
+
+.btn4-popup:hover {
+    background-color: #FFFDFC;
+    color: #e68b5e;
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 11px 45px;
+    background-color: #e68b5e;
+    color: #FFFDFC;
+    border-radius: 25px;
+    font-size: 22px;
+    font-family: 'Bebas Neue', cursive;
+    border: none;
+    cursor: pointer;
+    transition: .3 ease all;
+}
+
+.btn-submit:hover {
+    background-color: #FFFDFC;
+    color: #e68b5e;
+}
+
+/* ESTILO VENTANAS EMERGENTES CONTACTO */
+
+.overlay {
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.overlay.active {
+    visibility: visible;
+}
+
+.popup {
+    background: #09080D;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-family: 'Bebas Neue', cursive;
+    padding: 20px;
+    text-align: center;
+    width: 600px;
+
+
+}
+
+.popup .btn-cerrar-popup {
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    text-align: right;
+    color: #e68b5e;
+    transition: .3s ease all;
+}
+
+.popup .btn-cerrar-popup:hover {
+    color: #FFFDFC;
+}
+
+.popup h3 {
+    font-size: 36px;
+    color: #FFFDFC;
+    /* opacity: 0; */
+}
+
+.popup h4 {
+    font-size: 36px;
+    color: #FFFDFC;
+    /* opacity: 0; */
+}
+
+.popup form .contenedor-inputs input {
+    width: 50%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #e68b5e57;
+    border: 1px solid #e68b5e;
+
+}
+
+
+
+
+
+/* ANIMACIONES POPUP */
+
+
+/* NOSOTROS */
+.about {
+    padding: 100px 0;
     display: flex;
     border-bottom: 2px solid #e68b5e;
-    animation: animate 3.2s linear forwards;
+    align-items: center;
 }
 
 .about_txt {
     width: 50%;
-    animation: animate 3.2s linear forwards;
 }
 
 .about_img {
@@ -134,44 +277,29 @@ p {
 
 .about_img img {
     width: 450px;
-    animation: animate 3.2s linear forwards;
 }
 
 h2 {
     font-size: 70px;
-    color: #fffdfc;
+    color: #FFFDFC;
     margin-bottom: 15px;
 }
 
 .about_txt p {
     font-size: 16px;
-    color: #e0e0e0;
+    color: #FFFDFC;
     margin-bottom: 35px;
 }
-
-/* SECCION SERVICIOS */
-
-.services_container {
-    padding: 50px 0;
-    margin: 0px 30px;
+/* SERVICIOS */
+.services {
+    padding: 100px 0;
     display: flex;
     border-bottom: 2px solid #e68b5e;
+    align-items: center;
 }
 
 .services_txt {
     width: 50%;
-}
-
-h2 {
-    font-size: 70px;
-    color: #fffdfc;
-    margin-bottom: 15px;
-}
-
-.services_txt p {
-    font-size: 16px;
-    color: #e0e0e0;
-    margin-bottom: 35px;
 }
 
 .services_img {
@@ -182,48 +310,84 @@ h2 {
     width: 450px;
 }
 
+.services_txt p {
+    font-size: 16px;
+    color: #FFFDFC;
+    margin-bottom: 35px;
+}
+
+/* CONTACTO */
+
+.contact {
+    padding: 100px 0;
+    display: flex;
+    border-bottom: 2px solid #e68b5e;
+    align-items: center;
+}
+
+.contact_txt {
+    width: 50%;
+}
+
+.contact_img {
+    width: 50%;
+}
+
+.contact_img img {
+    width: 450px;
+}
+
+.contact_txt p {
+    font-size: 16px;
+    color: #FFFDFC;
+    margin-bottom: 35px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none;  
+}
+
 /* RESPONSIVE */
+@media (max-width: 991px){
 
-@media(max-width:991px) {
-
-    .menu_container {
-        padding: 30px; 
+    .menu {
+        padding: 30px;
     }
 
-    .menu_icono {
+    .menu label {
         display: initial;
-        margin-right: 30px;
     }
 
-    .menu_container .navbar {
+    .menu .navbar {
         position: absolute;
-        top: 100%;
+        top:100%;
         left: 0;
         right: 0;
         background-color: rgba(0, 0, 0, 0.8);
         display: none;
-        animation: animate 0.5s linear forwards
     }
 
-    .menu_container .navbar ul li {
+    .menu .navbar ul li {
         width: 100%;
     }
 
-    #menu:checked ~ .navbar {
+    #menu:checked ~ .navbar{
         display: initial;
-    } 
+    }
 
     .header {
         min-height: 0vh;
+        background-size: cover; /* Evita que la imagen se achique demasiado */
+        background-position: center;
     }
 
-    .header_content_container {
+    .header_content {
         padding: 100px 30px;
     }
 
     .header_txt {
         width: 100%;
-        padding-right: 40px;
         text-align: center;
     }
 
@@ -232,7 +396,7 @@ h2 {
         line-height: 80px;
     }
 
-    .about_container {
+    .about {
         padding: 30px 30px 30px 30px;
         flex-direction: column;
     }
@@ -253,7 +417,7 @@ h2 {
         width: 300px;
     }
     
-    .services_container {
+    .services {
         padding: 30px 30px 30px 30px;
         flex-direction: column;
     }
@@ -273,9 +437,66 @@ h2 {
         width: 300px;
     }
 
+    .contact {
+        padding: 30px 30px 30px 30px;
+        flex-direction: column;
+    }
+
+    .contact_txt {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .contact_img {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact_img img {
+        width: 300px;
+    }
+
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
+
+/* Footer */
+
+.footer {
+    background-color: #09080D;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer p{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.icon {
+    color: white;
+    font-size: 40px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.icon:hover {
+    color: #ff9900; /* Cambiar color al pasar el mouse */
+}
+
+/* Estilos responsivos */
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 10px;
+    }
+}
