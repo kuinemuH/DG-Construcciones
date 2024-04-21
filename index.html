@@ -104,12 +104,31 @@
         <div class="social-icons">
             <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
             <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/+5491135815405" target="_blank" class="icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" onclick="abrirWhatsapp()" target="_blank" class="icon" id="abrirWhatsapp"><i class="fab fa-whatsapp"></i></a>
         </div>
         <p class="copyright">Copyright © 2024 DG CONSTRUCCIONES | Design: MH Diseños.</p>
     </footer>
     <script src="./js/app.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function abrirWhatsapp() {
+        var esDispositivoMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        var enlaceWhatsapp;
+        
+        if (esDispositivoMovil) {
+            // Si es un dispositivo móvil, usar el enlace deep link
+            enlaceWhatsapp = "whatsapp://send?phone=+5491135815405";
+        } else {
+            // Si es una computadora, usar el enlace web
+            enlaceWhatsapp = "https://wa.me/+5491135815405";
+            // Abrir enlace en una nueva pestaña
+            window.open(enlaceWhatsapp, "_blank");
+            return;
+        }
+        
+        window.location.href = enlaceWhatsapp;
+    }
+    </script>
 </body>
 </html>
