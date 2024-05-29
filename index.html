@@ -72,6 +72,7 @@
             <br>
             <h3>03- construcción</h3>
             <p>Contamos con un equipo de profesionales y técnicos capaces de llevar a cabo la construcción de nuestros proyectos acompañando a nuestros clientes desde la concepción del diseño hasta la entrega del edificio.</p>
+            <br>
             <a href="./pages/gallery.html"><button class="btn3-popup">Ir a Galeria</button></a>
         </div>
         </div>
@@ -82,14 +83,14 @@
         </div>
         <div class="contact_txt">
             <h2>Contactanos</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, esse reprehenderit. Eos, ipsum ab? Sit, voluptas! Nihil blanditiis laudantium laborum quo, reprehenderit velit, quidem aliquam unde soluta aut cum amet.</p>
+            <p>Estamos aquí para ayudarte con todos tus proyectos. Por favor, déjanos tu nombre y número de teléfono y nos pondremos en contacto a la brevedad.</p>
             <button class="btn4-popup" id="btn4-popup">Formulario</button>
             <div class="overlay" id="overlay">
                 <div class="popup" id="popup">
                     <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h3>Dejanos Tu Contacto!</h3>
                     <h4>Nos Comunicaremos En Breve.</h4>
-                    <form action="https://formspree.io/f/mnqkdbzp" method="post">
+                    <form action="https://formspree.io/f/mleqyrjj" method="post">
                         <div class="contenedor-inputs">
                             <input type="text" name="nombre" placeholder="Nombre" required>
                             <input type="number" name="telefono" placeholder="Número Telefónico" required>
@@ -101,21 +102,23 @@
         </section>
 </main>
 <footer class="footer">
-        <div class="social-icons">
-            <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
-            <a href="#" onclick="abrirWhatsapp()" target="_blank" class="icon" id="abrirWhatsapp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p class="copyright">Copyright © 2024 DG CONSTRUCCIONES | Design: MH Diseños.</p>
-    </footer>
-    <script src="./js/app.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script>
-        function abrirWhatsapp() {
+    <div class="social-icons">
+        <a href="#" class="icon" id="instagram-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" onclick="abrirWhatsapp(event)" target="_blank" class="icon" id="abrirWhatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="copyright">Copyright © 2024 DG CONSTRUCCIONES | Design: MH Diseños.</p>
+</footer>
+
+<script src="./js/app.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    function abrirWhatsapp(event) {
+        event.preventDefault();
         var esDispositivoMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         var enlaceWhatsapp;
-        
+
         if (esDispositivoMovil) {
             // Si es un dispositivo móvil, usar el enlace deep link
             enlaceWhatsapp = "whatsapp://send?phone=+5491135815405";
@@ -126,9 +129,25 @@
             window.open(enlaceWhatsapp, "_blank");
             return;
         }
-        
+
         window.location.href = enlaceWhatsapp;
     }
-    </script>
+
+    document.getElementById('instagram-icon').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+        var url = 'https://www.instagram.com/dg.arqcons/';
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // Redirigir a la aplicación de Instagram en dispositivos móviles
+            window.location.href = 'instagram://user?username=dg.arqcons';
+        } else {
+            // Abrir en una nueva pestaña en dispositivos de escritorio
+            window.open(url, '_blank');
+        }
+    });
+</script>
+
 </body>
 </html>
