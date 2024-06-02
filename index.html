@@ -104,7 +104,7 @@
 <footer class="footer">
     <div class="social-icons">
         <a href="#" class="icon" id="instagram-icon"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="icon" id="facebook-icon"><i class="fab fa-facebook"></i></a>
         <a href="#" onclick="abrirWhatsapp(event)" target="_blank" class="icon" id="abrirWhatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
     <p class="copyright">Copyright © 2024 DG CONSTRUCCIONES | Design: MH Diseños.</p>
@@ -147,7 +147,23 @@
             window.open(url, '_blank');
         }
     });
+
+    document.getElementById('facebook-icon').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+        var url = 'https://www.facebook.com/profile.php?id=61560640070385&mibextid=JRoKGi';
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // Redirigir a la aplicación de Facebook en dispositivos móviles
+            window.location.href = 'fb://profile/61560640070385';
+        } else {
+            // Abrir en una nueva pestaña en dispositivos de escritorio
+            window.open(url, '_blank');
+        }
+    });
 </script>
+
 
 </body>
 </html>
